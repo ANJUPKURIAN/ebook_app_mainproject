@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "802090119053",
+    "project_id": "mainproject-dacc2",
+    "storage_bucket": "mainproject-dacc2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:802090119053:android:2cb52d9bafcbec6c9697c4",
+        "android_client_info": {
+          "package_name": "com.example.ebook_app_mainproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf3_KvvHLhc1WAmge38AUwl0fU4OeT9_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
