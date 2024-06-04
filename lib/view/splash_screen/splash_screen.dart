@@ -35,9 +35,14 @@ class _SplashScreenState extends State<SplashScreen> {
 @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(" Enjoy  Reading!"),
+      ),
+
    body: Center(
        child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfR8hcgpkoA2HNSHjzwgiSbg414CqPvQze9w&s"),    
-        //  child: Text("Splash Screen",
+        //  child: Text("Enjoy Reading",
         // style: TextStyle(
         //   fontSize: 18,
         //   fontWeight: FontWeight.bold,

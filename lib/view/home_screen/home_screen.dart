@@ -1,6 +1,5 @@
-
+import 'package:ebook_app_mainproject/view/home_screen/widget/drama.dart';
 import 'package:flutter/material.dart';
-//import 'package:get/get.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -57,73 +56,155 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
          ),
         ),
-      ],
-    ),
+
+     SizedBox(height: 8),
+     // for show books 
+           Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Topics",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+                Text(
+                  "View all",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color:  Colors.black),
+                )
+              ],
+            ),
+      
+      SizedBox(height: 8),
+     
+       // for category of books
+   // 1.box
+       Container(
+        height: 50,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+
+                },
+              child: Container(
+                width: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.lightGreen,
+                  ),
+                  child: Text("Novel",                  
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                   color: Colors.white,
+                  ),
+                  ),
+              ),
+              ),
+            ),
+
+          // 2.box
+             Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  
+                },
+              child: Container(
+                width: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.lightGreen,
+                  ),
+                  child: Text("Love",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                   color: Colors.white,
+                  ),
+                  ),
+              ),
+              ),
+            ),
+       // 3.box
+         Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  
+                },
+              child: Container(
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.lightGreen,
+                  ),
+                  child: Text("Autobiography",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                   color: Colors.white,
+                  ),
+                  ),
+              ),
+              ),
+            ),
+          // 4.box
+           Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: 
+                 (context)=> Drama()));
+                },
+              child: Container(
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.lightGreen,
+                  ),
+                  child: Text("Drama",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                   color: Colors.white,
+                  ),
+                  ),
+              ),
+              ),
+            ),
+          ],
+        ),
+       ),
+               
+
+
+
+
+
+
+
+
+
+
+     
+        
+     
+
+     
+ ],
+   ),
   ),
   ),
+  );
 
-
-
-
-
-
-
-
-      // body: Padding(
-      //   padding: const EdgeInsets.all(20),
-      //   child: Column(
-      //     children: [
-      //       Container(
-      //         decoration: BoxDecoration(
-      //             borderRadius: BorderRadius.circular(10),
-      //             color: Color(0xffffe576)),
-      //         padding: EdgeInsets.all(10),
-      //         child: Row(
-      //           mainAxisAlignment: MainAxisAlignment.spaceAround,
-      //           children: [
-      //             Container(
-      //                 height: 150,
-      //                 width: 150,
-      //                 child: Image.network(
-      //                     "https://p1.hiclipart.com/preview/702/417/143/gift-food-shopping-cart-food-gift-baskets-grocery-store-health-food-flowerpot-home-accessories-png-clipart.jpg")),
-      //             RichText(
-      //                 textAlign: TextAlign.center,
-      //                 text: TextSpan(
-      //                     text: "organic",
-      //                     style: TextStyle(
-      //                         color: Colors.black,
-      //                         fontSize: 40,
-      //                         fontWeight: FontWeight.bold),
-      //                     children: [
-      //                       TextSpan(
-      //                           text: "\nvegetables",
-      //                           style: TextStyle(
-      //                               fontSize: 20, fontWeight: FontWeight.w500))
-      //                     ]))
-      //           ],
-      //         ),
-      //       ),
-      //       SizedBox(height: 20),
-      //       Row(
-      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //         children: [
-      //           Text(
-      //             "category",
-      //             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-      //           ),
-      //           Text(
-      //             "View all",
-      //             style: TextStyle(
-      //                 fontWeight: FontWeight.bold,
-      //                 fontSize: 15,
-      //                 color: Color(0xff288d63)),
-      //           )
-      //         ],
-      //       ),
-          
-          
-    );
-  }
+ }
 }
   
 
