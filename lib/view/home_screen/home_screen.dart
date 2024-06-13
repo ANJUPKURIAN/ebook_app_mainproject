@@ -1,4 +1,4 @@
-import 'package:ebook_app_mainproject/view/home_screen/widget/drama.dart';
+import 'package:ebook_app_mainproject/view/home_screen/widget/category_widget.dart';
 import 'package:flutter/material.dart';
 
 
@@ -58,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
 
      SizedBox(height: 8),
-     // for show books 
+     // for category
            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -79,109 +79,18 @@ class _HomeScreenState extends State<HomeScreen> {
       SizedBox(height: 8),
      
        // for category of books
-   // 1.box
-       Container(
-        height: 50,
-        child: ListView(
-          scrollDirection: Axis.horizontal,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-
-                },
-              child: Container(
-                width: 80,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: Colors.lightGreen,
-                  ),
-                  child: Text("Novel",                  
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                   color: Colors.white,
-                  ),
-                  ),
-              ),
+    SizedBox(height: 20),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                    4,
+                    (index) => Row(
+                          children: [CategoryWidget(),
+                           SizedBox(width: 10)],
+                        )),
               ),
             ),
-
-          // 2.box
-             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-                  
-                },
-              child: Container(
-                width: 80,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: Colors.lightGreen,
-                  ),
-                  child: Text("Love",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                   color: Colors.white,
-                  ),
-                  ),
-              ),
-              ),
-            ),
-       // 3.box
-         Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-                  
-                },
-              child: Container(
-                width: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: Colors.lightGreen,
-                  ),
-                  child: Text("Autobiography",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                   color: Colors.white,
-                  ),
-                  ),
-              ),
-              ),
-            ),
-          // 4.box
-           Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(context,
-                  MaterialPageRoute(builder: 
-                 (context)=> Drama()));
-                },
-              child: Container(
-                width: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
-                  color: Colors.lightGreen,
-                  ),
-                  child: Text("Drama",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                   color: Colors.white,
-                  ),
-                  ),
-              ),
-              ),
-            ),
-          ],
-        ),
-       ),
                
 
 
