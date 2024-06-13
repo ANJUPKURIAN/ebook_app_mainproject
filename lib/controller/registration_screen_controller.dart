@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 class RegistrationScreenController with ChangeNotifier{
   bool isLoading = false;
+  // write fn to register new user
   Future<bool>register(
     {required BuildContext context,
     required String email,
@@ -21,13 +22,12 @@ class RegistrationScreenController with ChangeNotifier{
                   return true;
                 }
                 
-                
-              } on FirebaseAuthException catch (e) {
+             } on FirebaseAuthException catch (e) {
              if (e.code == 'weak-password') {
               print('The password provided is too weak.');
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 backgroundColor: Colors.red,
-                content: Text("The password pr'ovided is too weak'.")));
+                content: Text("The password provided is too weak'.")));
                 isLoading = false;
                 notifyListeners();
                 return false;
