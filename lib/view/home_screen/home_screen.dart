@@ -1,4 +1,9 @@
-import 'package:ebook_app_mainproject/view/home_screen/widget/category_widget.dart';
+//import 'package:ebook_app_mainproject/view/dummy_db.dart';
+//import 'package:ebook_app_mainproject/view/home_screen/widget/category_widget.dart';
+import 'package:ebook_app_mainproject/view/category/biographycategory.dart';
+import 'package:ebook_app_mainproject/view/category/classiccategory.dart';
+import 'package:ebook_app_mainproject/view/category/dramacategory.dart';
+import 'package:ebook_app_mainproject/view/category/lovecategory.dart';
 import 'package:flutter/material.dart';
 
 
@@ -79,20 +84,182 @@ class _HomeScreenState extends State<HomeScreen> {
       SizedBox(height: 8),
      
        // for category of books
-    SizedBox(height: 20),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(
-                    4,
-                    (index) => Row(
-                          children: [CategoryWidget(),
-                           SizedBox(width: 10)],
-                        )),
+    // SizedBox(height: 10),
+    //         SingleChildScrollView(
+    //           scrollDirection: Axis.horizontal,
+    //           child: Row(
+    //             children: List.generate(
+    //               //  4,
+    //               DummyDb.categoryList.length,
+
+    //                 (index) => CategoryWidget(
+    //                       categoryName: DummyDb.categoryList[index]["categoryName"],
+    //                       image: DummyDb.categoryList[index]["image"],
+    //                       // SizedBox(width: 10)],
+    //                  ),
+    //                  ),
+    //           ),
+    //         ),
+
+ Container(
+        height: 50,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                Navigator.push(context,
+                MaterialPageRoute(builder: 
+                (context)=>DramaCategory()));
+                },
+              child: Container(
+                width: 80,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.lightGreen,
+                  ),
+                  child: Text("Drama",                  
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                   color: Colors.white,
+                  ),
+                  ),
+              ),
               ),
             ),
-               
 
+          // 2.box
+             Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                   Navigator.push(context,
+                MaterialPageRoute(builder: 
+                (context)=>BioGraphyCategory()));
+                },
+              child: Container(
+                width: 120,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.lightGreen,
+                  ),
+                  child: Text("BioGraphy",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                   color: Colors.white,
+                  ),
+                  ),
+              ),
+              ),
+            ),
+       // 3.box
+         Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                   Navigator.push(context,
+                MaterialPageRoute(builder: 
+                (context)=>LoveCategory()));
+                },
+              child: Container(
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.lightGreen,
+                  ),
+                  child: Text("LoveStory",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                   color: Colors.white,
+                  ),
+                  ),
+              ),
+              ),
+            ),
+          // 4.box
+           Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: InkWell(
+                onTap: () {
+                 Navigator.push(context,
+                MaterialPageRoute(builder: 
+                (context)=>ClassicCategory()));
+                },
+              child: Container(
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6),
+                  color: Colors.lightGreen,
+                  ),
+                  child: Text("Classic",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                   color: Colors.white,
+                  ),
+                  ),
+              ),
+              ),
+            ),
+          ],
+        ),
+       ),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               
+           // trending list
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Trending",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+                Text(
+                  "View all",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.black87),
+                )
+              ],
+            ),
 
 
 

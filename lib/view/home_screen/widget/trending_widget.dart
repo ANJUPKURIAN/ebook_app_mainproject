@@ -35,7 +35,7 @@ class TrendingWidget extends StatelessWidget {
                 5, (index) => Icon(Icons.star, color: Colors.amber, size: 10)),
           ),
           Text(
-            "A  Tale of tw cities",
+            "A  Tale of two cities,Charles Dickens",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
           Row(
@@ -48,26 +48,28 @@ class TrendingWidget extends StatelessWidget {
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                           fontSize: 20),
-                      children: [
-                    TextSpan(
-                      text: "\$28 ",
-                      style: TextStyle(
-                          decoration: TextDecoration.lineThrough,
-                          decorationThickness: 5,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15),
-                    ),
-                    TextSpan(
-                      text: " 5% off",
-                      style: TextStyle(
-                          color: Color(0xff288d63),
-                          fontWeight: FontWeight.w500,
-                          fontSize: 10),
-                    )
-                  ])),
+                      //children: [
+                    // TextSpan(
+                    //   text: "\$28 ",
+                    //   style: TextStyle(
+                    //       decoration: TextDecoration.lineThrough,
+                    //       decorationThickness: 5,
+                    //       fontWeight: FontWeight.bold,
+                    //       fontSize: 15),
+                    // ),
+                    // TextSpan(
+                    //   text: " 5% off",
+                    //   style: TextStyle(
+                    //       color: Color(0xff288d63),
+                    //       fontWeight: FontWeight.w500,
+                    //       fontSize: 10),
+                    // )
+                 // ]
+                  ),
+                  ),
               Container(
                 padding: EdgeInsets.all(5),
-                color: Color(0xff288d63),
+                color: Colors.lightBlue[400],
                 child: Icon(Icons.shopping_bag_outlined,
                     color: Colors.white, size: 15),
               )
