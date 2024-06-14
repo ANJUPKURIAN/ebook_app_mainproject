@@ -26,7 +26,7 @@ class BookCard extends StatelessWidget {
         children: [
       //InkWell(
        // onTap: (){
-         // Navigator.pushNamed(context,"chatpage");
+         // Navigator.pushNamed(context,"drama1page");
        // },
       //),
           Row(

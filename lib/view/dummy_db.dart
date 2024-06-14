@@ -165,4 +165,24 @@ class DummyDb{
       },
      ];
 
+        //  static const List<Map<String,dynamic>>trendingList=[
+        //   {
+        //   "book":"Anna Karenina",
+        //   "name":" Leo Tolstoy",
+        //   "rate":"4.5",
+        //   "image":"https://standardebooks.org/ebooks/leo-tolstoy/anna-karenina/constance-garnett/downloads/cover.jpg",
+        //   "views":"2.6k",
+        //   },
+
+        //   {
+        //   "book":"Macbeth",
+        //   "name":" William Shakespeare",
+        //   "rate":"4.8",
+        //   "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIJgwfmYR2nKxvquPghOYXfzBIeL_Wb5DjKF2hsgT3ejwEsG6h-l7m9IIcK0wjbXqtkBk&usqp=CA",
+        //   "views":"3.1k",
+        //   },
+          
+        //  ];
+
+
 }

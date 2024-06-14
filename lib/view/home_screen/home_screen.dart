@@ -4,6 +4,8 @@ import 'package:ebook_app_mainproject/view/category/biographycategory.dart';
 import 'package:ebook_app_mainproject/view/category/classiccategory.dart';
 import 'package:ebook_app_mainproject/view/category/dramacategory.dart';
 import 'package:ebook_app_mainproject/view/category/lovecategory.dart';
+import 'package:ebook_app_mainproject/view/home_screen/widget/recommandedwidget.dart';
+import 'package:ebook_app_mainproject/view/home_screen/widget/trending_widget.dart';
 import 'package:flutter/material.dart';
 
 
@@ -83,25 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
       
       SizedBox(height: 8),
      
-       // for category of books
-    // SizedBox(height: 10),
-    //         SingleChildScrollView(
-    //           scrollDirection: Axis.horizontal,
-    //           child: Row(
-    //             children: List.generate(
-    //               //  4,
-    //               DummyDb.categoryList.length,
-
-    //                 (index) => CategoryWidget(
-    //                       categoryName: DummyDb.categoryList[index]["categoryName"],
-    //                       image: DummyDb.categoryList[index]["image"],
-    //                       // SizedBox(width: 10)],
-    //                  ),
-    //                  ),
-    //           ),
-    //         ),
-
- Container(
+  Container(
         height: 50,
         child: ListView(
           scrollDirection: Axis.horizontal,
@@ -118,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 80,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.lightGreen,
+                  color: Colors.lightBlue,
                   ),
                   child: Text("Drama",                  
                   textAlign: TextAlign.center,
@@ -144,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 120,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.lightGreen,
+                  color: Colors.lightBlue,
                   ),
                   child: Text("BioGraphy",
                   textAlign: TextAlign.center,
@@ -169,7 +153,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.lightGreen,
+                  color: Colors.lightBlue,
                   ),
                   child: Text("LoveStory",
                   textAlign: TextAlign.center,
@@ -194,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: 100,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                  color: Colors.lightGreen,
+                  color: Colors.lightBlue,
                   ),
                   child: Text("Classic",
                   textAlign: TextAlign.center,
@@ -211,38 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
        ),
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-               
-           // trending list
+   // 2nd row trending list
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -260,6 +213,70 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
+       
+       SizedBox(height: 10),
+       SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(
+                      3,
+                      (index) => Row(
+                            children: [
+                              InkWell(
+                                  onTap: () {
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //       builder: (context) => ProductScreen(),
+                                    //     ));
+                                  },
+                                  child: TrendingWidget()),
+                              SizedBox(width: 15)
+                            ],
+                          )),
+                )),
+
+
+ // 2nd row recommended list
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Recommended",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                ),
+                Text(
+                  "View all",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 15,
+                      color: Colors.black87),
+                )
+              ],
+            ),
+       
+       SizedBox(height: 10),
+       SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(
+                      3,
+                      (index) => Row(
+                            children: [
+                              InkWell(
+                                  onTap: () {
+                                    // Navigator.push(
+                                    //     context,
+                                    //     MaterialPageRoute(
+                                    //       builder: (context) => ProductScreen(),
+                                    //     ));
+                                  },
+                                  child: RecommandedWidget()),
+                              SizedBox(width: 15)
+                            ],
+                          )),
+                )),
 
 
 
@@ -269,7 +286,19 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 
-     
+
+
+
+
+
+
+
+
+
+
+
+
+
         
      
 

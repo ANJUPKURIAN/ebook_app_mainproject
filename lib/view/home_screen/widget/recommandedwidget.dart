@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TrendingWidget extends StatelessWidget {
-  const TrendingWidget({super.key});
+class RecommandedWidget extends StatelessWidget {
+  const RecommandedWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class TrendingWidget extends StatelessWidget {
               height: 50,
               width: 50,
               child: Image.asset(
-                 "Assets/Images/macbeth.jpg" ),
+                 "Assets/Images/anna karenina.jpg" ),
             ),
           ),
           Row(
@@ -35,7 +35,7 @@ class TrendingWidget extends StatelessWidget {
                 4, (index) => Icon(Icons.star, color: Colors.amber, size: 10)),
           ),
           Text(
-            "Macbeth, \n William Skakesphere",
+            "Macbeth, \n Leo Tolstoy",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
           ),
           Row(
@@ -43,7 +43,7 @@ class TrendingWidget extends StatelessWidget {
             children: [
               RichText(
                   text: TextSpan(
-                      text: "15k views ",
+                      text: "10.2k views ",
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.w500,
