@@ -1,5 +1,6 @@
-import 'package:ebook_app_mainproject/view/category/widget/lovebookcard.dart';
+import 'package:ebook_app_mainproject/model/lovemodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
+import 'package:ebook_app_mainproject/view/home_screen/booktabs/lovestorypage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,31 +20,82 @@ class LoveCategory extends StatelessWidget {
           child: Icon(
             Icons.arrow_back)),
         centerTitle: true,
-        title: Text("LoveStorys",
+        title: Text("Lovestorys",
         style: TextStyle(fontSize: 30,
         fontWeight: FontWeight.bold,
         color: Colors.black87),
         ),
       ),
 
-      body: ListView.separated(
-      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-
-        itemBuilder: (context, index) => LoveBookCard
-        (
-        bookName: DummyDb.lovestoryList[index]['bookName'],
-        author: DummyDb.lovestoryList[index]['author'],
-        rating: DummyDb.lovestoryList[index]['rating'],
-        count: DummyDb.lovestoryList[index]['count'],
-        bookPic: DummyDb.lovestoryList[index]['bookPic'],
-       ),
-    separatorBuilder: (context, index) => Divider(
+     body: ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        itemBuilder: (context, index) {
+          var book = DummyDb.lovestoryList[index];
+        return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => LovestoryPage(
+                    bookName: book['bookName'],
+                    author: book['author'],
+                    rating: book['rating'],
+                    count: book['count'],
+                    bookPic: book['bookPic'],
+                    description: book['description'],
+                 ),
+                ),
+              );
+            },
+            child: LoveModel(
+              bookName: book['bookName'],
+              author: book['author'],
+              rating: book['rating'],
+              count: book['count'],
+              bookPic: book['bookPic'],
+           ),
+          );
+        },
+        separatorBuilder: (context, index) => Divider(
           color: Colors.black.withOpacity(.1),
           indent: 30,
           endIndent: 30,
+        ),
+        itemCount: DummyDb.lovestoryList.length,
       ),
-      itemCount: DummyDb.lovestoryList.length
-      ),
-    );
+ );
+
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

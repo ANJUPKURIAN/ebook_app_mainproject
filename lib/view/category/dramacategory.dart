@@ -1,4 +1,4 @@
-import 'package:ebook_app_mainproject/view/category/widget/bookcard.dart';
+import 'package:ebook_app_mainproject/model/dramamodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
 import 'package:ebook_app_mainproject/view/home_screen/booktabs/dramapage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/home_screen.dart';
@@ -42,18 +42,18 @@ class DramaCategory extends StatelessWidget {
                     rating: book['rating'],
                     count: book['count'],
                     bookPic: book['bookPic'],
-                  ),
+                    description: book['description'],
+                 ),
                 ),
               );
             },
-            child: BookCard(
+            child: DramaModel(
               bookName: book['bookName'],
-              // icon: book['icon'], // Uncomment if you use an icon
               author: book['author'],
               rating: book['rating'],
               count: book['count'],
               bookPic: book['bookPic'],
-            ),
+           ),
           );
         },
         separatorBuilder: (context, index) => Divider(
@@ -98,28 +98,5 @@ class DramaCategory extends StatelessWidget {
 
 
 
-    //   body: ListView.separated(
-    //   padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-
-    //     itemBuilder: (context, index) =>  BookCard
-    //     (
-        
-    //     bookName: DummyDb.dramaList[index]['bookName'],
-    //    // icon: DummyDb.dramaList[index]['icon'],
-    //     author: DummyDb.dramaList[index]['author'],
-    //     rating: DummyDb.dramaList[index]['rating'],
-    //     count: DummyDb.dramaList[index]['count'],
-    //     bookPic: DummyDb.dramaList[index]['bookPic'],
-    //    ),
-       
-    // separatorBuilder: (context, index) => Divider(
-    //       color: Colors.black.withOpacity(.1),
-    //       indent: 30,
-    //       endIndent: 30,
-    //   ),
-    //   itemCount: DummyDb.dramaList.length
-
-    //   ),
-    //);
-  //}
-//}
+    
+    

@@ -1,10 +1,11 @@
-import 'package:ebook_app_mainproject/view/category/widget/biobookcard.dart';
+import 'package:ebook_app_mainproject/model/biomodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
+import 'package:ebook_app_mainproject/view/home_screen/booktabs/biographypage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
-class BioGraphyCategory extends StatelessWidget {
-  const BioGraphyCategory({super.key});
+class BiographyCategory extends StatelessWidget {
+  const BiographyCategory({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,24 +27,75 @@ class BioGraphyCategory extends StatelessWidget {
         ),
       ),
 
-      body: ListView.separated(
-      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-
-        itemBuilder: (context, index) => BioBookCard
-        (
-        bookName: DummyDb.biographyList[index]['bookName'],
-        author: DummyDb.biographyList[index]['author'],
-        rating: DummyDb.biographyList[index]['rating'],
-        count: DummyDb.biographyList[index]['count'],
-        bookPic: DummyDb.biographyList[index]['bookPic'],
-       ),
-    separatorBuilder: (context, index) => Divider(
+     body: ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        itemBuilder: (context, index) {
+          var book = DummyDb.biographyList[index];
+        return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BiographyPage(
+                    bookName: book['bookName'],
+                    author: book['author'],
+                    rating: book['rating'],
+                    count: book['count'],
+                    bookPic: book['bookPic'],
+                    description: book['description'],
+                 ),
+                ),
+              );
+            },
+            child: BioModel(
+              bookName: book['bookName'],
+              author: book['author'],
+              rating: book['rating'],
+              count: book['count'],
+              bookPic: book['bookPic'],
+           ),
+          );
+        },
+        separatorBuilder: (context, index) => Divider(
           color: Colors.black.withOpacity(.1),
           indent: 30,
           endIndent: 30,
+        ),
+        itemCount: DummyDb.biographyList.length,
       ),
-      itemCount: DummyDb.biographyList.length
-      ),
-    );
+ );
+
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

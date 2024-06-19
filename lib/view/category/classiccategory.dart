@@ -1,5 +1,6 @@
-import 'package:ebook_app_mainproject/view/category/widget/classicbookcard.dart';
+import 'package:ebook_app_mainproject/model/classicmodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
+import 'package:ebook_app_mainproject/view/home_screen/booktabs/classicpage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -26,24 +27,76 @@ class ClassicCategory extends StatelessWidget {
         ),
       ),
 
-      body: ListView.separated(
-      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-
-        itemBuilder: (context, index) => ClassicBookCard
-        (
-        bookName: DummyDb.classicList[index]['bookName'],
-        author: DummyDb.classicList[index]['author'],
-        rating: DummyDb.classicList[index]['rating'],
-        count: DummyDb.classicList[index]['count'],
-        bookPic: DummyDb.classicList[index]['bookPic'],
-       ),
-    separatorBuilder: (context, index) => Divider(
+     body: ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        itemBuilder: (context, index) {
+          var book = DummyDb.classicList[index];
+        return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ClassicPage(
+                    bookName: book['bookName'],
+                    author: book['author'],
+                    rating: book['rating'],
+                    count: book['count'],
+                    bookPic: book['bookPic'],
+                    description: book['description'],
+                 ),
+                ),
+              );
+            },
+            child: ClassicModel(
+              bookName: book['bookName'],
+              author: book['author'],
+              rating: book['rating'],
+              count: book['count'],
+              bookPic: book['bookPic'],
+           ),
+          );
+        },
+        separatorBuilder: (context, index) => Divider(
           color: Colors.black.withOpacity(.1),
           indent: 30,
           endIndent: 30,
+        ),
+        itemCount: DummyDb.classicList.length,
       ),
-      itemCount: DummyDb.classicList.length
-      ),
-    );
+ );
+
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    

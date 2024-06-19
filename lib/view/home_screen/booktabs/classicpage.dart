@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:get/get.dart';
 
-class DramaPage extends StatelessWidget {
-  const DramaPage(
+class ClassicPage extends StatelessWidget {
+  const ClassicPage(
   {
       super.key,
     required this.bookName,

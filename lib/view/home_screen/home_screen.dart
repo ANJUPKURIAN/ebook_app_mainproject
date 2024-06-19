@@ -1,10 +1,9 @@
-//import 'package:ebook_app_mainproject/view/dummy_db.dart';
-//import 'package:ebook_app_mainproject/view/home_screen/widget/category_widget.dart';
+//import 'package:ebook_app_mainproject/model/trendingmodel.dart';
 import 'package:ebook_app_mainproject/view/category/biographycategory.dart';
 import 'package:ebook_app_mainproject/view/category/classiccategory.dart';
 import 'package:ebook_app_mainproject/view/category/dramacategory.dart';
 import 'package:ebook_app_mainproject/view/category/lovecategory.dart';
-import 'package:ebook_app_mainproject/view/home_screen/widget/recommandedwidget.dart';
+import 'package:ebook_app_mainproject/view/home_screen/widget/recommendedwidget.dart';
 import 'package:ebook_app_mainproject/view/home_screen/widget/trending_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -122,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onTap: () {
                    Navigator.push(context,
                 MaterialPageRoute(builder: 
-                (context)=>BioGraphyCategory()));
+                (context)=>BiographyCategory()));
                 },
               child: Container(
                 width: 120,
@@ -210,7 +209,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.bold,
                       fontSize: 15,
                       color: Colors.black87),
-                )
+                ),
+                
               ],
             ),
        
@@ -223,13 +223,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       (index) => Row(
                             children: [
                               InkWell(
-                                  onTap: () {
-                                    // Navigator.push(
-                                    //     context,
-                                    //     MaterialPageRoute(
-                                    //       builder: (context) => ProductScreen(),
-                                    //     ));
-                                  },
+                                  onTap: () {},
                                   child: TrendingWidget()),
                               SizedBox(width: 15)
                             ],
@@ -272,7 +266,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     //       builder: (context) => ProductScreen(),
                                     //     ));
                                   },
-                                  child: RecommandedWidget()),
+                                  child: RecommendedWidget()),
                               SizedBox(width: 15)
                             ],
                           )),
@@ -286,24 +280,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-     
-
-     
- ],
+],
    ),
   ),
   ),
