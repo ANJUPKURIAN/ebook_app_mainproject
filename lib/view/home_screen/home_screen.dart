@@ -1,4 +1,5 @@
-//import 'package:ebook_app_mainproject/model/trendingmodel.dart';
+import 'dart:io';
+
 import 'package:ebook_app_mainproject/view/category/biographycategory.dart';
 import 'package:ebook_app_mainproject/view/category/classiccategory.dart';
 import 'package:ebook_app_mainproject/view/category/dramacategory.dart';
@@ -6,6 +7,7 @@ import 'package:ebook_app_mainproject/view/category/lovecategory.dart';
 import 'package:ebook_app_mainproject/view/home_screen/widget/recommendedwidget.dart';
 import 'package:ebook_app_mainproject/view/home_screen/widget/trending_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 
 class HomeScreen extends StatefulWidget {
@@ -54,7 +56,54 @@ class _HomeScreenState extends State<HomeScreen> {
       }).toList();
     });
   }
- // main code
+// navigate to book category
+void navigateToCategoryPage(String category) {
+  switch (category.toLowerCase()) {
+    case 'drama':
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DramaCategory()),
+      );
+      break;
+    case 'biography':
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BiographyCategory()),
+      );
+      break;
+    case 'lovestory':
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LoveCategory()),
+      );
+      break;
+    case 'classic':
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ClassicCategory()),
+      );
+      break;
+    default:
+      // Handle other cases or errors
+      break;
+  }
+}
+// imagepicker object
+File? _imageFile;
+  final ImagePicker _picker = ImagePicker();
+
+  Future<void> _pickImage() async {
+    final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+
+    if (pickedFile != null) {
+      setState(() {
+        _imageFile = File(pickedFile.path);
+      });
+    }
+  }
+
+
+// main code
  @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -67,13 +116,19 @@ class _HomeScreenState extends State<HomeScreen> {
           Icons.menu, 
           color: Colors.black
           ),
-          
+
+       // apply image picker   
        actions: [ 
-            CircleAvatar(
-             backgroundImage: NetworkImage(
+      GestureDetector(
+            onTap: _pickImage,
+            child: CircleAvatar(
+             backgroundImage: _imageFile != null
+            ? FileImage(_imageFile!) as ImageProvider
+              : NetworkImage(
               "https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"),
             ),
-       ],
+      ),
+      ],
        ),
 
    // search textfield
@@ -109,13 +164,19 @@ class _HomeScreenState extends State<HomeScreen> {
        searchQuery.isNotEmpty
             ? filteredBooks.isNotEmpty
             ? Column(
-            children: List.generate(filteredBooks.length, (index) {
+            children: List.generate(
+              filteredBooks.length, 
+              (index) {
             var book = filteredBooks[index];
             return ListTile(
               title: Text(book['bookName']!),
               subtitle: Text(book['author']!),
+              onTap: (){
+              navigateToCategoryPage(book['category']!);
+               },
               );
-              }),
+              },
+              ),
               )
               : Center(
             child: Text("No results found"),

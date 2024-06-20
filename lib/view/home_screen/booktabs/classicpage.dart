@@ -37,7 +37,7 @@ class ClassicPage extends StatelessWidget {
 
        actions: [
           IconButton(
-            icon: Icon(Icons.download),
+            icon: Icon(Icons.download_outlined),
             onPressed: (){
             // Add your download 
             ScaffoldMessenger.of(context).showSnackBar(
@@ -46,29 +46,16 @@ class ClassicPage extends StatelessWidget {
             },
           ),
 
-         IconButton(
-          icon: Icon(Icons.book),
-          onPressed: () {
-            // Add your read book 
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text("Read Book"))
-            );
-          },
-        ),
+        //  IconButton(
+        //   icon: Icon(Icons.book_outlined),
+        //   onPressed: () {
+        //     // Add your read book 
+        //     ScaffoldMessenger.of(context).showSnackBar(
+        //       SnackBar(content: Text("Read Book"))
+        //     );
+        //   },
+        // ),
       ],
-
-
-
-
-
-
-
-
-
-
-
-
-
       ),
     
     body:Padding(
@@ -122,7 +109,26 @@ class ClassicPage extends StatelessWidget {
               description,
               style: TextStyle(fontSize: 16),
             ),
-          ],
+       // book icon after description
+         SizedBox(height: 16), // Add some space before the new Row
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(Icons.book_outlined),
+                onPressed: () {
+                  // Add your read book 
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text("Read Book")),
+                  );
+                },
+              ),
+              Text(
+                "Read",
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
+          ),
+         ],
         ),
       ),
     );
