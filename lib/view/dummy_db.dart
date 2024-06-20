@@ -166,7 +166,16 @@ class DummyDb{
 
          static const List<Map<String,dynamic>>trendingList=[
           {
-            "id":1,
+            // lovestorypage data
+            "bookName": "Anna Karenina",
+            "icon" :"favorite",
+            "author": "Leo Tolstoy",
+            "rating":"star",
+            "count":"4.5",
+           "bookPic":"https://standardebooks.org/ebooks/leo-tolstoy/anna-karenina/constance-garnett/downloads/cover.jpg",
+           "description":"It is considered as one of the pinnacles of world literature. The narrative centres on the adulterous affair between Anna, wife of Aleksey Karenin, and Count Vronsky, a young bachelor.",
+           // trendingmodel data
+           // "id":1,
           "book":"Anna Karenina",
           "name":" Leo Tolstoy",
           "rate":"4.5",
@@ -176,7 +185,15 @@ class DummyDb{
           },
 
           {
-            "id":2,
+            "bookName": "Pride and Prejudice",
+            "icon" :"favorite",
+            "author": " Jane Austen",
+             "rating":"star",
+             "count":"4.2",
+            "bookPic":"https://akm-img-a-in.tosshub.com/sites/visualstory/wp/2024/05/81Y5vEXNcBL_SL1500_.jpg?size=*:900 ",
+            "description":"It follows the turbulent relationship between Elizabeth Bennet, the daughter of a country gentleman, and Fitzwilliam Darcy, a rich aristocratic landowner. They must overcome the titular sins of pride and prejudice in order to fall in love and marry.",   
+             
+            //  "id":2,
           "book":"Pride and Prejudice",
           "name":" Jane Austen",
           "rate":"4.2",
@@ -186,7 +203,15 @@ class DummyDb{
           },
 
           {
-            "id":3,
+           "bookName": "Something Borrowed",
+           "icon" :"favorite",
+           "author": " Emily Giffin",
+           "rating":"star", 
+           "count":"4.8",
+           "bookPic":"https://upload.wikimedia.org/wikipedia/en/d/dd/Somethingborrowed.JPG",
+           "description":"It tells the story of Rachel, a young attorney living and working in Manhattan. Rachel has always been the consummate good girl---until her thirtieth birthday, when her best friend, Darcy, throws her a party. That night, after too many drinks, Rachel ends up in bed with Darcy's fiancé.",
+
+           // "id":3,
           "book":"Something Borrowed",
           "name":"Emily Giffin ",
           "rate":"4.8",
@@ -198,7 +223,16 @@ class DummyDb{
 
         static const List<Map<String,dynamic>>recommendedList=[
         {
-           "id":1,
+          //dramalist data
+          "bookName": "Macbeth",
+          "author": " William Shakespeare",
+          "rating":"star",
+         "count":"4.8",
+         "bookPic":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIJgwfmYR2nKxvquPghOYXfzBIeL_Wb5DjKF2hsgT3ejwEsG6h-l7m9IIcK0wjbXqtkBk&usqp=CA",
+         "description":" Macbeth is a tragedy that tells the story of a soldier whose overriding ambition and thrist for power cause him to abandon his morals and bring about the near destruction of the kingdom he seeks to rule",
+
+         // recommendedlist data
+           //"id":1,
           "book":"Macbeth",
           "name":" William Shakespeare",
           "rate":"4.8",
@@ -208,7 +242,14 @@ class DummyDb{
          },
 
           {
-           "id":3,
+            "bookName": "The Fault in our Stars",
+            "author": " John Green",
+            "rating":"star",
+            "count":"4.7",
+            "bookPic":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1X1QXfmBPL5dRwn1FPUMZ4JPpeAB2sazTKfl9wqg2m4_ANEStEPLNGvTwv2r8gYW9ymQ&usqp=CAU",
+           "description":"A young adult fiction novel that narrates the story of a 16-year-old girl who is diagnosed with cancer. She joins a support group where she meets Augustus, and there is a rollercoaster of emotions throughout this novel as the relationship between Hazel and Augustus develops.",
+
+          // "id":2,
           "book":"The Fault in our Stars",
           "name":" John Green",
           "rate":"4.7",
@@ -218,7 +259,14 @@ class DummyDb{
          },
 
          {
-           "id":3,
+           "bookName": "Death of a Salesman",
+           "author": " Arthur Miller",      
+           "count":"4.6",
+           "rating":"star",
+           "bookPic":"https://m.media-amazon.com/images/I/61K5SjZnD+L._AC_UF1000,1000_QL80_.jpg",
+           "description":"It addresses loss of identity and a man's inability to accept change within himself and society. The play is a montage of memories, dreams, confrontations, and arguments, all of which make up the last 24 hours of Willy Loman's life.",
+
+           //"id":3,
           "book":"The Death of a Salesman",
           "name":" Arthur Miller",
           "rate":"4.6",
@@ -226,8 +274,6 @@ class DummyDb{
           "views":"3.9k",
           "favorite":false,
          },
-
-
-       ];
+     ];
 
 }

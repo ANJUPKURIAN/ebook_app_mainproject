@@ -15,7 +15,47 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 class _HomeScreenState extends State<HomeScreen> {
-   @override
+// total book list available
+    List<Map<String, String>> books = [
+     {'bookName': 'Macbeth', 'author': 'William Shakespeare','category':'drama'},
+     {'bookName': 'The Fault in Our Stars', 'author': 'John Green','category':'drama' },
+     {'bookName': 'Death of a Salesman', 'author': 'Arthur Miller','category':'drama'},
+     {'bookName': 'The Twelth Night', 'author': 'William Shakespeare','category':'drama'},
+
+    {'bookName': 'Wings of Fire', 'author': 'APJ Abdul Kalam','category':'biography'},
+    {'bookName': 'The Diary of a Young Girl', 'author': 'Anne Frank','category':'biography'},
+    {'bookName': 'CV Raman', 'author': 'Uma Parameswaran','category':'biography'},
+    {'bookName': 'Husain: Portrait of an Artist', 'author': 'Ila Pal','category':'biography'},
+
+    {'bookName': 'Anna Karenina', 'author': 'Leo Tolstoy','category':'lovestory'},
+    {'bookName': 'Pride and Prejudice', 'author': 'Jane Austen','category':'lovestory'},
+    {'bookName': 'Romeo and Juliet', 'author': 'William Shakespeare','category':'lovestory'},
+    {'bookName': 'Something Borrowed', 'author': 'Emily Giffin','category':'lovestory'},
+
+    {'bookName': 'A Tale of Two Cities', 'author': 'Charles Dickens','category':'classic'},
+    {'bookName': 'The Secret Garden', 'author': 'Frances Hodgson Burnett','category':'classic'},
+    {'bookName': 'The Three Men in a Boat', 'author': 'Jerome k.Jerome','category':'classic'},
+    {'bookName': 'A Christmas Carol', 'author': 'charles Dickens','category':'classic'}, // Add more books here
+ ];
+ // filtering book with letter
+ List<Map<String, String>> filteredBooks = [];
+  String searchQuery = '';
+  @override
+  void initState() {
+    super.initState();
+    filteredBooks = books;
+  }
+// update search according to letter after search
+ void updateSearchQuery(String query) {
+    setState(() {
+      searchQuery = query;
+      filteredBooks = books.where((book) {
+        return book['bookName']!.toLowerCase().contains(query.toLowerCase());
+      }).toList();
+    });
+  }
+ // main code
+ @override
   Widget build(BuildContext context) {
    return Scaffold(
       appBar: AppBar(
@@ -61,10 +101,28 @@ class _HomeScreenState extends State<HomeScreen> {
             borderSide: BorderSide.none,
             ),
          ),
-        ),
+      onChanged: updateSearchQuery,
+    ),
 
      SizedBox(height: 8),
-     // for category
+      // search results or no results message
+       searchQuery.isNotEmpty
+            ? filteredBooks.isNotEmpty
+            ? Column(
+            children: List.generate(filteredBooks.length, (index) {
+            var book = filteredBooks[index];
+            return ListTile(
+              title: Text(book['bookName']!),
+              subtitle: Text(book['author']!),
+              );
+              }),
+              )
+              : Center(
+            child: Text("No results found"),
+             )
+          : Container(),
+
+ // for category
            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -271,15 +329,6 @@ class _HomeScreenState extends State<HomeScreen> {
                             ],
                           )),
                 )),
-
-
-
-
-
-
-
-
-
 ],
    ),
   ),

@@ -1,3 +1,5 @@
+//import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 //import 'package:get/get.dart';
 
@@ -5,6 +7,7 @@ class LovestoryPage extends StatelessWidget {
   const LovestoryPage(
   {
       super.key,
+      //Key ? key,
     required this.bookName,
     required this.author,
     required this.rating,
@@ -17,8 +20,8 @@ class LovestoryPage extends StatelessWidget {
 
   final String bookName;
   final String author;
-  final String rating;
-  final String count;
+  final String rating;// double  may use
+  final String count;// int  may use
   final String bookPic;
   final String description;
 
@@ -35,6 +38,37 @@ class LovestoryPage extends StatelessWidget {
           Navigator.pop(context);
         },
         ),
+
+       actions: [
+          IconButton(
+            icon: Icon(Icons.download),
+            onPressed: (){
+            // Add your download 
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Download"))
+            );
+            },
+          ),
+
+         IconButton(
+          icon: Icon(Icons.book),
+          onPressed: () {
+            // Add your read book 
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Read Book"))
+            );
+          },
+        ),
+      ],
+
+
+
+
+
+
+
+
+
       ),
     
     body:Padding(

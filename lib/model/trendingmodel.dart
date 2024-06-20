@@ -86,7 +86,7 @@ class _TrendingModelState extends State<TrendingModel> {
         child: IconButton(
           icon: Icon(
           isFavorite ? Icons.favorite : Icons.favorite_border,
-              color: isFavorite ? Colors.green : Colors.grey,
+              color: isFavorite ? Colors.red : Colors.grey,
           ),
           onPressed: toggleFavorite,
           ),

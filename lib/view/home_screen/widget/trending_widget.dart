@@ -18,7 +18,9 @@ class TrendingWidget extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.push(
+                     // Debug: print the values being passed
+                    //print('Navigating to LoveStoryPage with book: $book');
+                      Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) =>LovestoryPage (
@@ -33,6 +35,7 @@ class TrendingWidget extends StatelessWidget {
                    );
                   },
                   child: TrendingModel(
+                    
                     book: book['book'],
                     name: book['name'],
                     rate: book['rate'],

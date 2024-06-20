@@ -33,6 +33,28 @@ class BiographyPage extends StatelessWidget {
           Navigator.pop(context);
         },
         ),
+
+         actions: [
+          IconButton(
+            icon: Icon(Icons.download),
+            onPressed: (){
+            // Add your download 
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Download"))
+            );
+            },
+          ),
+
+         IconButton(
+          icon: Icon(Icons.book),
+          onPressed: () {
+            // Add your read book 
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(content: Text("Read Book"))
+            );
+          },
+        ),
+      ],
       ),
     
     body:Padding(
