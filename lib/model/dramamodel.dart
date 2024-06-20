@@ -9,6 +9,7 @@ class DramaModel extends StatelessWidget {
   required this.rating,
   required this.count,
  required this.bookPic,
+   //required this.pdfUrl,
 
   });
 
@@ -17,7 +18,8 @@ class DramaModel extends StatelessWidget {
   final String rating;
   final String count;
   final String bookPic;
-   
+   // final String pdfUrl;
+
   @override
   Widget build(BuildContext context) {
 

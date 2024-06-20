@@ -1,4 +1,6 @@
+import 'package:ebook_app_mainproject/model/favoritebookmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class TrendingModel extends StatefulWidget {
      TrendingModel(
@@ -35,6 +37,14 @@ class _TrendingModelState extends State<TrendingModel> {
   }
 
   void toggleFavorite() {
+    final favoriteBooksProvider = Provider.of<FavoriteBookModel>(context, listen: false);
+    favoriteBooksProvider.toggleFavorite({
+      'book': widget.book,
+      'name': widget.name,
+      'rate': widget.rate,
+      'image': widget.image,
+      'views': widget.views,
+    });
     setState(() {
       isFavorite = !isFavorite;
     });
@@ -43,6 +53,8 @@ class _TrendingModelState extends State<TrendingModel> {
 
   @override
   Widget build(BuildContext context) {
+    final favoriteBooksProvider = Provider.of<FavoriteBookModel>(context);
+    isFavorite = favoriteBooksProvider.isFavorite(widget.book);
    return Stack(
      children: [
       Card(

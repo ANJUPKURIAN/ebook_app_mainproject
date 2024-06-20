@@ -4,8 +4,13 @@ import 'package:ebook_app_mainproject/view/category/biographycategory.dart';
 import 'package:ebook_app_mainproject/view/category/classiccategory.dart';
 import 'package:ebook_app_mainproject/view/category/dramacategory.dart';
 import 'package:ebook_app_mainproject/view/category/lovecategory.dart';
+import 'package:ebook_app_mainproject/view/home_screen/drawer/aboutpage.dart';
+import 'package:ebook_app_mainproject/view/home_screen/drawer/downloadspage.dart';
+import 'package:ebook_app_mainproject/view/home_screen/drawer/favoritespage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/widget/recommendedwidget.dart';
 import 'package:ebook_app_mainproject/view/home_screen/widget/trending_widget.dart';
+import 'package:ebook_app_mainproject/view/login_screen/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -112,10 +117,13 @@ File? _imageFile;
         centerTitle: true,
         title: Text("Book Store"),
         toolbarHeight: 100,
-        leading: Icon(
-          Icons.menu, 
-          color: Colors.black
-          ),
+        leading: Builder(
+        builder: (context) => IconButton(
+        icon:Icon(Icons.menu, 
+        color: Colors.black),
+        onPressed: () => Scaffold.of(context).openDrawer(), // open drawer on click on menu icon
+         ),
+        ),
 
        // apply image picker   
        actions: [ 
@@ -130,8 +138,94 @@ File? _imageFile;
       ),
       ],
        ),
+       // code for drawer
+     drawer: Drawer(
+       child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue.shade200,
+              ),
+              // image in header same as profile image
+               child: Column(
+                children: [
+                  CircleAvatar(
+                    radius: 40,
+                    backgroundImage: _imageFile != null
+                    ? FileImage(_imageFile!) as ImageProvider
+                    : NetworkImage(
+                   "https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"),
+                  ),
+             SizedBox(height: 8),
 
-   // search textfield
+              Text(
+                'User',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ],
+            ),
+            ),
+            
+            ListTile(
+              leading: Icon(Icons.info),
+              title: Text('About'),
+              onTap: () {
+                // to close drawer
+                Navigator.pop(context);
+                 Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutPage()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.favorite),
+              title: Text('Favorites'),
+              onTap: () {
+                // Handle Favorites tap
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => FavoritesPage()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.download),
+              title: Text('Downloads'),
+              onTap: ()  {
+                // Handle Downloads tap
+                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DownloadsPage()),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.logout_outlined),
+              title: Text('Logout'),
+              onTap: () async{
+                // Handle Exit tap
+                Navigator.pop(context);
+                 await FirebaseAuth.instance.signOut();
+
+                // Optionally, navigate to the login page or show a logout confirmation
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                );
+              },
+            ),
+          ],
+        ),
+      ), 
+
+// search textfield
   body: SingleChildScrollView(
   child: Padding(
     padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 18),

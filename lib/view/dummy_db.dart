@@ -7,6 +7,7 @@ class DummyDb{
       "count":"4.8",
       "bookPic":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIJgwfmYR2nKxvquPghOYXfzBIeL_Wb5DjKF2hsgT3ejwEsG6h-l7m9IIcK0wjbXqtkBk&usqp=CA",
       "description":" Macbeth is a tragedy that tells the story of a soldier whose overriding ambition and thrist for power cause him to abandon his morals and bring about the near destruction of the kingdom he seeks to rule",
+      //"pdfUrl":"https://www.williamshakespeare.net/ebook-macbeth.jsp",
       },
 
       {
