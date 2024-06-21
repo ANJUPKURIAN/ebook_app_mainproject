@@ -1,10 +1,10 @@
-import 'package:ebook_app_mainproject/view/home_screen/booktabs/dramastorypage.dart';
+import 'package:ebook_app_mainproject/view/home_screen/dramawidget/dramastorypage.dart';
 import 'package:flutter/material.dart';
-//import 'package:get/get.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class DramaPage extends StatelessWidget {
-  const DramaPage(
-  {
+  
+  const DramaPage({
         Key? key,
     // super.key,
     required this.bookName,
@@ -13,10 +13,10 @@ class DramaPage extends StatelessWidget {
     required this.count,
     required this.bookPic,
     required this.description,
-   // required this.pdfUrl,
-
-  }
-  );
+    required this.pdfUrl,
+  })
+  : super(key: key);
+  
 
   final String bookName;
   final String author;
@@ -24,7 +24,7 @@ class DramaPage extends StatelessWidget {
   final String count;
   final String bookPic;
   final String description;
-  //final String pdfUrl;
+  final String pdfUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -121,15 +121,16 @@ class DramaPage extends StatelessWidget {
               IconButton(
                 icon: Icon(Icons.book_outlined),
                 onPressed: () {
-                  // Navigate to a new page to display the full book story
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => DramaStoryPage(bookName: bookName),
-                    //   ),
-                 // Add your read book 
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Read Book")),
+                 Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DramaStoryPage(
+                          bookName: bookName,
+                          pdfUrl: pdfUrl,
+                        ),
+                      ),
+                  // ScaffoldMessenger.of(context).showSnackBar(
+                  //   SnackBar(content: Text("Could not open the book")),
                   );
                 },
               ),
