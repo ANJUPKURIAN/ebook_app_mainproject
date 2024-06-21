@@ -23,7 +23,7 @@ class DramaStoryPage extends StatelessWidget {
         title: Text(bookName),
       ),
     body: SfPdfViewer.network(pdfUrl),
-
+     
     );
   }
 }

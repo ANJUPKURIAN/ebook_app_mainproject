@@ -1,6 +1,6 @@
 import 'package:ebook_app_mainproject/view/home_screen/dramawidget/dramastorypage.dart';
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+//import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class DramaPage extends StatelessWidget {
   
