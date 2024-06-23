@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 //import 'package:flutter_pdfview/flutter_pdfview.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class DramaStoryPage extends StatelessWidget {
+class ClassicStoryPage extends StatelessWidget {
   final String bookName;
   final String pdfUrl;
 
-  const DramaStoryPage({
+  const ClassicStoryPage({
     //super.key,
     Key? key,
     required this.bookName,

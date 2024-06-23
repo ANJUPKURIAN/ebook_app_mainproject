@@ -1,19 +1,20 @@
-//import 'dart:ffi';
 
+import 'package:ebook_app_mainproject/view/home_screen/lovewidget/lovestorypages.dart';
 import 'package:flutter/material.dart';
 //import 'package:get/get.dart';
 
 class LovestoryPage extends StatelessWidget {
   const LovestoryPage(
   {
-      super.key,
-      //Key ? key,
+      //super.key,
+      Key ? key,
     required this.bookName,
     required this.author,
     required this.rating,
     required this.count,
     required this.bookPic,
     required this.description,
+    required this.pdfUrl,
 
   }
   );
@@ -24,6 +25,8 @@ class LovestoryPage extends StatelessWidget {
   final String count;// int  may use
   final String bookPic;
   final String description;
+  final String pdfUrl;
+
 
   @override
   Widget build(BuildContext context) {
@@ -50,15 +53,7 @@ class LovestoryPage extends StatelessWidget {
             },
           ),
 
-        //  IconButton(
-        //   icon: Icon(Icons.book_outlined),
-        //   onPressed: () {
-        //     // Add your read book 
-        //     ScaffoldMessenger.of(context).showSnackBar(
-        //       SnackBar(content: Text("Read Book"))
-        //     );
-        //   },
-        // ),
+       
       ],
     ),
     
@@ -121,8 +116,17 @@ class LovestoryPage extends StatelessWidget {
                 icon: Icon(Icons.book_outlined),
                 onPressed: () {
                   // Add your read book 
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Read Book")),
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoveStorypages(
+                          bookName: bookName,
+                          pdfUrl: pdfUrl,
+                        ),
+                      ),
+              
+                  // ScaffoldMessenger.of(context).showSnackBar(
+                  //   SnackBar(content: Text("Read Book")),
                   );
                 },
               ),

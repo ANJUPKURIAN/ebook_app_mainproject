@@ -30,6 +30,7 @@ class TrendingWidget extends StatelessWidget {
                     count: book['count'],
                     bookPic: book['bookPic'],
                     description: book['description'],
+                    pdfUrl: book['pdfUrl'],
                         ),
                       ),
                    );

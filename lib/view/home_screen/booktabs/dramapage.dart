@@ -1,11 +1,11 @@
 import 'package:ebook_app_mainproject/view/home_screen/dramawidget/dramastorypage.dart';
 import 'package:flutter/material.dart';
 //import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
+//import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 class DramaPage extends StatelessWidget {
-  
   const DramaPage({
-        Key? key,
+    Key? key,
     // super.key,
     required this.bookName,
     required this.author,
@@ -14,8 +14,7 @@ class DramaPage extends StatelessWidget {
     required this.bookPic,
     required this.description,
     required this.pdfUrl,
-  })
-  : super(key: key);
+  }) : super(key: key);
   
 
   final String bookName;
@@ -33,33 +32,21 @@ class DramaPage extends StatelessWidget {
         backgroundColor: Colors.lightBlue.shade400,
        title:Text(bookName),
        leading: IconButton(
-        icon:Icon(
-           Icons.arrow_back),
+        icon:Icon(Icons.arrow_back),
         onPressed: () {
           Navigator.pop(context);
         },
         ),
-        
-        actions: [
+      actions: [
           IconButton(
             icon: Icon(Icons.download_outlined),
             onPressed: (){
             // Add your download 
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text("Download"))
+              SnackBar(content: Text("Download")),
             );
             },
           ),
-
-        //  IconButton(
-        //   icon: Icon(Icons.book_outlined),
-        //   onPressed: () {
-        //     // Add your read book 
-        //     ScaffoldMessenger.of(context).showSnackBar(
-        //       SnackBar(content: Text("Read Book"))
-        //     );
-        //   },
-        // ),
       ], // actions
       ),
     
@@ -129,10 +116,10 @@ class DramaPage extends StatelessWidget {
                           pdfUrl: pdfUrl,
                         ),
                       ),
-                  // ScaffoldMessenger.of(context).showSnackBar(
-                  //   SnackBar(content: Text("Could not open the book")),
+                 // ScaffoldMessenger.of(context).showSnackBar(
+                   // SnackBar(content: Text("Could not open the book")),
                   );
-                },
+                 },
               ),
               Text(
                 "Read",

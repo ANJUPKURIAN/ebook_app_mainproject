@@ -4,11 +4,11 @@ class DramaModel extends StatelessWidget {
    DramaModel( // remove const
     {
       super.key,
-   required this.bookName,
-  required this.author,
-  required this.rating,
+    required this.bookName,
+   required this.author,
+   required this.rating,
   required this.count,
- required this.bookPic,
+  required this.bookPic,
    //required this.pdfUrl,
 
   });

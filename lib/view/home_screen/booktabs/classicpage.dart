@@ -1,18 +1,19 @@
+import 'package:ebook_app_mainproject/view/home_screen/classicwidget/classicstorypage.dart';
 import 'package:flutter/material.dart';
 
 class ClassicPage extends StatelessWidget {
   const ClassicPage(
   {
-      super.key,
+        Key? key,
+      //super.key,
     required this.bookName,
     required this.author,
     required this.rating,
     required this.count,
     required this.bookPic,
     required this.description,
-
-  }
-  );
+    required this.pdfUrl,
+   }) : super(key: key);
 
   final String bookName;
   final String author;
@@ -20,6 +21,7 @@ class ClassicPage extends StatelessWidget {
   final String count;
   final String bookPic;
   final String description;
+  final String pdfUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -46,16 +48,7 @@ class ClassicPage extends StatelessWidget {
             },
           ),
 
-        //  IconButton(
-        //   icon: Icon(Icons.book_outlined),
-        //   onPressed: () {
-        //     // Add your read book 
-        //     ScaffoldMessenger.of(context).showSnackBar(
-        //       SnackBar(content: Text("Read Book"))
-        //     );
-        //   },
-        // ),
-      ],
+        ],
       ),
     
     body:Padding(
@@ -117,8 +110,16 @@ class ClassicPage extends StatelessWidget {
                 icon: Icon(Icons.book_outlined),
                 onPressed: () {
                   // Add your read book 
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Read Book")),
+                   Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ClassicStoryPage(
+                          bookName: bookName,
+                          pdfUrl: pdfUrl,
+                        ),
+                      ),
+                  // ScaffoldMessenger.of(context).showSnackBar(
+                  //   SnackBar(content: Text("Read Book")),
                   );
                 },
               ),

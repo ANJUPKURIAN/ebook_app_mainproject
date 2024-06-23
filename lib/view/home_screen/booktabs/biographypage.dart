@@ -1,14 +1,17 @@
+import 'package:ebook_app_mainproject/view/home_screen/biowidget/biostorypage.dart';
 import 'package:flutter/material.dart';
 class BiographyPage extends StatelessWidget {
   const BiographyPage(
   {
-      super.key,
+        Key? key,
+       //super.key,
     required this.bookName,
     required this.author,
     required this.rating,
     required this.count,
     required this.bookPic,
     required this.description,
+    required this.pdfUrl,
 
   }
   );
@@ -19,6 +22,7 @@ class BiographyPage extends StatelessWidget {
   final String count;
   final String bookPic;
   final String description;
+  final String pdfUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -44,16 +48,6 @@ class BiographyPage extends StatelessWidget {
             );
             },
           ),
-
-        //  IconButton(
-        //   icon: Icon(Icons.book_outlined),
-        //   onPressed: () {
-        //     // Add your read book 
-        //     ScaffoldMessenger.of(context).showSnackBar(
-        //       SnackBar(content: Text("Read Book"))
-        //     );
-        //   },
-        // ),
       ],
       ),
     
@@ -116,8 +110,17 @@ class BiographyPage extends StatelessWidget {
                 icon: Icon(Icons.book_outlined),
                 onPressed: () {
                   // Add your read book 
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text("Read Book")),
+                   Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BioStoryPage(
+                          bookName: bookName,
+                          pdfUrl: pdfUrl,
+                        ),
+                      ),
+
+                   // ScaffoldMessenger.of(context).showSnackBar(
+                  //   SnackBar(content: Text("Read Book")),
                   );
                 },
               ),
