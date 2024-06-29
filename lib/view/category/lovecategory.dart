@@ -1,7 +1,7 @@
-import 'package:ebook_app_mainproject/model/lovemodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
 import 'package:ebook_app_mainproject/view/home_screen/booktabs/lovestorypage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/home_screen.dart';
+import 'package:ebook_app_mainproject/view/home_screen/modelbook/lovemodels.dart';
 import 'package:flutter/material.dart';
 
 class LoveCategory extends StatelessWidget {
@@ -49,7 +49,7 @@ class LoveCategory extends StatelessWidget {
                 ),
               );
             },
-            child: LoveModel(
+            child: LoveModels(
               bookName: book['bookName'],
               author: book['author'],
               rating: book['rating'],

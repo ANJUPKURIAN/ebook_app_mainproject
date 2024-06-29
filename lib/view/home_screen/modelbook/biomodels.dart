@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LoveModel extends StatelessWidget {
-   LoveModel( // remove const
+class BioModels extends StatelessWidget {
+
+   BioModels( // remove const
     {
       super.key,
    required this.bookName,
@@ -9,9 +10,7 @@ class LoveModel extends StatelessWidget {
   required this.rating,
   required this.count,
  required this.bookPic,
-
-  });
-
+});
   final String bookName;
   final String author;
   final String rating;

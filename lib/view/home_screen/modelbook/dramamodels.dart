@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+//import 'package:hive/hive.dart';
 
-class DramaModel extends StatelessWidget {
-   DramaModel( // remove const
+class DramaModels extends StatelessWidget {
+   DramaModels( // remove const
     {
       super.key,
     required this.bookName,

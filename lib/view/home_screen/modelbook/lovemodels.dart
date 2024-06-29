@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BioModel extends StatelessWidget {
-   BioModel( // remove const
+class LoveModels extends StatelessWidget {
+   LoveModels( // remove const
     {
       super.key,
    required this.bookName,

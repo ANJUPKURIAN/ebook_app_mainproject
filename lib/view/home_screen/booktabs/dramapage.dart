@@ -1,7 +1,9 @@
+//import 'dart:io';
 import 'package:ebook_app_mainproject/view/home_screen/dramawidget/dramastorypage.dart';
 import 'package:flutter/material.dart';
-//import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
-//import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:dio/dio.dart';
+import 'package:path_provider/path_provider.dart';
+//import 'package:http/http.dart' as http;
 
 class DramaPage extends StatelessWidget {
   const DramaPage({
@@ -25,7 +27,32 @@ class DramaPage extends StatelessWidget {
   final String description;
   final String pdfUrl;
 
-  @override
+ // for download pdf using dio package
+
+Future<void> _downloadFile(BuildContext context) async {
+    try {
+      var dio = Dio();
+      var dir = await getApplicationDocumentsDirectory();
+      String savePath = '${dir.path}/$bookName.pdf';
+
+      await dio.download(pdfUrl, savePath, onReceiveProgress: (received, total) {
+        if (total != -1) {
+          print((received / total * 100).toStringAsFixed(0) + "%");
+        }
+      });
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Download completed: $savePath")),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Download failed: $e")),
+      );
+    }
+  }
+
+
+   @override
   Widget build(BuildContext context) {
  return Scaffold(
       appBar: AppBar(
@@ -42,7 +69,8 @@ class DramaPage extends StatelessWidget {
             icon: Icon(Icons.download_outlined),
             onPressed: (){
             // Add your download 
-            ScaffoldMessenger.of(context).showSnackBar(
+             _downloadFile(context);
+           ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text("Download")),
             );
             },
@@ -116,8 +144,6 @@ class DramaPage extends StatelessWidget {
                           pdfUrl: pdfUrl,
                         ),
                       ),
-                 // ScaffoldMessenger.of(context).showSnackBar(
-                   // SnackBar(content: Text("Could not open the book")),
                   );
                  },
               ),

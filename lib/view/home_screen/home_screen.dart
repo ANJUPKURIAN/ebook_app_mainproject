@@ -4,6 +4,7 @@ import 'package:ebook_app_mainproject/view/category/biographycategory.dart';
 import 'package:ebook_app_mainproject/view/category/classiccategory.dart';
 import 'package:ebook_app_mainproject/view/category/dramacategory.dart';
 import 'package:ebook_app_mainproject/view/category/lovecategory.dart';
+import 'package:ebook_app_mainproject/view/dummy_db.dart';
 import 'package:ebook_app_mainproject/view/home_screen/drawer/aboutpage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/drawer/downloadspage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/drawer/favoritespage.dart';
@@ -203,7 +204,9 @@ File? _imageFile;
                 Navigator.pop(context);
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => DownloadsPage()),
+                  MaterialPageRoute(
+                    builder: (context) => DownloadsPage(downloadedList:DummyDb.downloadedList),
+                ),
                 );
               },
             ),

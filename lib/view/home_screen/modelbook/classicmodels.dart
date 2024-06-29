@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ClassicModel extends StatelessWidget {
-   ClassicModel( // remove const
+class ClassicModels extends StatelessWidget {
+   ClassicModels( // remove const
     {
       super.key,
    required this.bookName,

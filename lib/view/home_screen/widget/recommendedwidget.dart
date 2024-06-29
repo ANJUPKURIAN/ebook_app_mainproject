@@ -1,6 +1,6 @@
-import 'package:ebook_app_mainproject/model/recommendedmodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
 import 'package:ebook_app_mainproject/view/home_screen/booktabs/dramapage.dart';
+import 'package:ebook_app_mainproject/view/home_screen/modelbook/recommendedmodels.dart';
 import 'package:flutter/material.dart';
 
 
@@ -33,7 +33,7 @@ class RecommendedWidget extends StatelessWidget {
                       ),
                    );
                   },
-                  child: RecommendedModel(
+                  child: RecommendedModels(
                     book: book['book'],
                     name: book['name'],
                     rate: book['rate'],

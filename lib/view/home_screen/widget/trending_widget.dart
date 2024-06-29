@@ -1,6 +1,6 @@
-import 'package:ebook_app_mainproject/model/trendingmodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
 import 'package:ebook_app_mainproject/view/home_screen/booktabs/lovestorypage.dart';
+import 'package:ebook_app_mainproject/view/home_screen/modelbook/trendingmodels.dart';
 import 'package:flutter/material.dart';
 
 
@@ -35,7 +35,7 @@ class TrendingWidget extends StatelessWidget {
                       ),
                    );
                   },
-                  child: TrendingModel(
+                  child: TrendingModels(
                     
                     book: book['book'],
                     name: book['name'],

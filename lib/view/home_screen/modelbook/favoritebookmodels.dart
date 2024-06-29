@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class FavoriteBookModel extends ChangeNotifier {
+class FavoriteBookModels extends ChangeNotifier {
   List<Map<String, String>> _favoriteBooks = [];
 
  List<Map<String, String>> get favoriteBooks => _favoriteBooks;

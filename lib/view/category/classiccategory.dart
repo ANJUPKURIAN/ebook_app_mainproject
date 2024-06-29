@@ -1,7 +1,7 @@
-import 'package:ebook_app_mainproject/model/classicmodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
 import 'package:ebook_app_mainproject/view/home_screen/booktabs/classicpage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/home_screen.dart';
+import 'package:ebook_app_mainproject/view/home_screen/modelbook/classicmodels.dart';
 import 'package:flutter/material.dart';
 
 class ClassicCategory extends StatelessWidget {
@@ -48,7 +48,7 @@ class ClassicCategory extends StatelessWidget {
                 ),
               );
             },
-            child: ClassicModel(
+            child: ClassicModels(
               bookName: book['bookName'],
               author: book['author'],
               rating: book['rating'],

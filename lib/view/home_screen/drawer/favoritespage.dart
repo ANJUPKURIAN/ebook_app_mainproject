@@ -1,4 +1,4 @@
-import 'package:ebook_app_mainproject/model/favoritebookmodel.dart';
+import 'package:ebook_app_mainproject/view/home_screen/modelbook/favoritebookmodels.dart';
 import 'package:flutter/material.dart';
 
 class FavoritesPage extends StatelessWidget {
@@ -21,11 +21,11 @@ class FavoritesPage extends StatelessWidget {
           ],
       ),
 
-      body: FavoriteBookModel().favoriteBooks.isNotEmpty
+      body: FavoriteBookModels().favoriteBooks.isNotEmpty
           ? ListView.builder(
-              itemCount: FavoriteBookModel().favoriteBooks.length,
+              itemCount: FavoriteBookModels().favoriteBooks.length,
               itemBuilder: (context, index) {
-                var book = FavoriteBookModel().favoriteBooks[index];
+                var book = FavoriteBookModels().favoriteBooks[index];
                 return ListTile(
                   leading: Image.network(
                     book['image']!,

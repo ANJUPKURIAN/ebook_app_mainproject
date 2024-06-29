@@ -1,7 +1,7 @@
-import 'package:ebook_app_mainproject/model/biomodel.dart';
 import 'package:ebook_app_mainproject/view/dummy_db.dart';
 import 'package:ebook_app_mainproject/view/home_screen/booktabs/biographypage.dart';
 import 'package:ebook_app_mainproject/view/home_screen/home_screen.dart';
+import 'package:ebook_app_mainproject/view/home_screen/modelbook/biomodels.dart';
 import 'package:flutter/material.dart';
 
 class BiographyCategory extends StatelessWidget {
@@ -49,7 +49,7 @@ class BiographyCategory extends StatelessWidget {
                 ),
               );
             },
-            child: BioModel(
+            child: BioModels(
               bookName: book['bookName'],
               author: book['author'],
               rating: book['rating'],

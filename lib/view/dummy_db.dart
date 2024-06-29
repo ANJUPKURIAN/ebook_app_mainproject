@@ -302,4 +302,28 @@ class DummyDb{
          },
      ];
 
+    static  List<String>downloadedList=[
+      // dramabooks
+         'https://folger-main-site-assets.s3.amazonaws.com/uploads/2022/11/macbeth_PDF_FolgerShakespeare.pdf',
+         'https://www.juhsd.net/site/handlers/filedownload.ashx?moduleinstanceid=4480&dataid=7745&FileName=The-Fault-in-Our-Stars.pdf',
+         'https://joycej.kenstonlocal.org/wp-content/uploads/sites/109/2015/01/Death-of-a-Salesman.pdf',
+         'https://folger-main-site-assets.s3.amazonaws.com/uploads/2022/11/twelfth-night_PDF_FolgerShakespeare.pdf',
+      //biographybooks
+       'https://ati.dae.gov.in/ati12052021_8.pdf',
+       'https://ajarng.weebly.com/uploads/8/2/3/0/8230849/pages_from_anne_frank_-_the_diary_of_a_young_girl.pdf',
+       'http://dspace.rri.res.in/bitstream/2289/6348/1/Citizen%20matters_part%20II.pdf',
+       'https://books.google.co.in/books?id=Zhc3DwAAQBAJ&printsec=frontcover&source=gbs_atb#v=onepage&q&f=false',
+    //lovestorybooks
+     'http://triggs.djvu.org/djvu-editions.com/TOLSTOY/ANNA/Download.pdf',
+     'https://www.gutenberg.org/files/1342/old/pandp12p.pdf',
+     'https://folger-main-site-assets.s3.amazonaws.com/uploads/2022/11/romeo-and-juliet_PDF_FolgerShakespeare.pdf',
+      '',// something borrowed
+    // classicbooks
+    'https://www.gutenberg.org/files/98/old/2city12p.pdf',
+    'https://ia601903.us.archive.org/25/items/TheSecretGarden_201303/The%20Secret%20Garden.pdf',
+    'https://cbseacademic.nic.in/web_material/doc/Novel-Three_Men_in_a_Boat.pdf',
+    'https://vidyaprabodhinicollege.edu.in/VPCCECM/ebooks/ENGLISH%20LITERATURE/Ghost%20Story%20books/A_Christmas_Carol.pdf',
+
+     ];
+
 }
