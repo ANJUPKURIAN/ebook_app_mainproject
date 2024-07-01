@@ -14,7 +14,7 @@ import 'package:ebook_app_mainproject/view/login_screen/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:permission_handler/permission_handler.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -94,11 +94,15 @@ void navigateToCategoryPage(String category) {
       break;
   }
 }
-// imagepicker object
-File? _imageFile;
+
+//imagepicker object
+ File? _imageFile;
   final ImagePicker _picker = ImagePicker();
 
   Future<void> _pickImage() async {
+    final status = await Permission.photos.request();
+
+    if (status.isGranted) {
     final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
 
     if (pickedFile != null) {
@@ -106,6 +110,14 @@ File? _imageFile;
         _imageFile = File(pickedFile.path);
       });
     }
+  }
+  else{
+    // Handle permission denial
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Permission denied to access gallery')),
+      );
+    }
+
   }
 
 
@@ -126,19 +138,20 @@ File? _imageFile;
          ),
         ),
 
-       // apply image picker   
-       actions: [ 
-      GestureDetector(
-            onTap: _pickImage,
-            child: CircleAvatar(
-             backgroundImage: _imageFile != null
-            ? FileImage(_imageFile!) as ImageProvider
-              : NetworkImage(
+       // apply image picker 
+         actions: [ 
+       GestureDetector(
+             onTap: _pickImage,
+             child: CircleAvatar(
+              backgroundImage: _imageFile != null
+           ? FileImage(_imageFile!) as ImageProvider
+               : NetworkImage(
               "https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"),
-            ),
-      ),
-      ],
+             ),
        ),
+       ],
+       ),
+       
        // code for drawer
      drawer: Drawer(
        child: ListView(
@@ -148,18 +161,18 @@ File? _imageFile;
               decoration: BoxDecoration(
                 color: Colors.blue.shade200,
               ),
+              
               // image in header same as profile image
                child: Column(
                 children: [
                   CircleAvatar(
                     radius: 40,
-                    backgroundImage: _imageFile != null
+                    backgroundImage: _imageFile!= null
                     ? FileImage(_imageFile!) as ImageProvider
                     : NetworkImage(
                    "https://images.pexels.com/photos/1772475/pexels-photo-1772475.jpeg?auto=compress&cs=tinysrgb&w=600"),
                   ),
              SizedBox(height: 8),
-
               Text(
                 'User',
                 textAlign: TextAlign.center,
